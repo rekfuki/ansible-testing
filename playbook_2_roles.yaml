@@ -5,12 +5,6 @@
       become: false
 
   tasks:
-  - name: Display /tmp/testfile contents
-    command: cat /tmp/testfile
-    register: command_output
-  - name: Print to console
-    debug:
-      msg: "{{command_output.stdout}}"
   - name: Print a message
     loop: "{{ range(5) }}"
     ansible.builtin.debug:
